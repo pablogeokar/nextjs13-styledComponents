@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app'
 import { SessionProvider } from "next-auth/react"
 import { ThemeProvider } from 'styled-components'
-import GlobalStyle from '../components/globalstyles'
-import { light } from '../config/themes'
+import GlobalStyle from '../components/GlobalStyle'
+import { light, dark } from '../config/themes'
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
