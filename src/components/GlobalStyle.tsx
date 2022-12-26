@@ -9,7 +9,20 @@ const GlobalStyle = createGlobalStyle`
     font-family:  ${font.style.fontFamily}, sans-serif;
     font-size: 16px;
     background:  ${({ theme }) => theme.colors.body};
-    color: ${({ theme }) => theme.colors.text};    
+    color: ${({ theme }) => theme.colors.gray};    
+  }
+
+  body::-webkit-scrollbar {
+    width: .8em;
+  }
+ 
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+ 
+  body::-webkit-scrollbar-thumb {
+    background-color: #979696;
+    outline: 1px solid slategray;
   }
 
   ul{
