@@ -1,6 +1,6 @@
 
 import styled from "styled-components"
-import { Text } from "../components"
+import { Text, Box } from "../components"
 
 
 export default function StyleGuide() {
@@ -33,6 +33,33 @@ export default function StyleGuide() {
         }
       </pre>
       <hr />
+
+      {/** Box */}
+      <Text level={1} fontWeight={700}>Box</Text>
+      <Box.Container width="600px" variation={1}>
+        <Box.Row center>
+          <Text fontWeight={600}>This is a center text</Text>
+        </Box.Row>
+        <Box.Row end>
+          <Text>This is a Box</Text>
+        </Box.Row>
+        <Text color="lightGray">This is a Box</Text>
+      </Box.Container>
+      
+      <Text>Code:</Text>
+      <pre>
+        {`        
+        <Box.Container width="600px">
+          <Box.Row center>
+            <Text fontWeight={600}>This is a center text</Text>
+          </Box.Row>
+          <Box.Row end>
+            <Text>This is a Box</Text>
+          </Box.Row>
+          <Text color="lightGray">This is a Box</Text>
+        </Box.Container>
+        `}
+      </pre>
     </Page>
   )
 }

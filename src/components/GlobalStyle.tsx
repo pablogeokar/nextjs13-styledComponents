@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #fff;
     width: 800px;
     color: #4e4e4e;
-    border: solid 1px #ccc;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
 
   * {

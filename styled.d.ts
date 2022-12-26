@@ -9,5 +9,9 @@ declare module "styled-components" {
       gray: string,
       lightGray: string,
     };
+    boxShadows:{
+      shadow01: string,
+      shadow02: string
+    }
   }
 }
