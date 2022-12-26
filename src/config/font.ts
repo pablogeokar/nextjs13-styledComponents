@@ -10,8 +10,8 @@ export const font = Poppins({
 export const sizes = {
   xsmall: ".8rem",
   small: ".9rem",
-  normal: "1rem",
-  large: "1.8rem",
-  xlarge: "2.8rem",
-  xxlarge: "3.6rem",
+  normal: "1.1rem",
+  large: "2rem",
+  xlarge: "3rem",
+  xxlarge: "4rem",
 };

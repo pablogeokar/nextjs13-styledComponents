@@ -1,6 +1,6 @@
 
 import styled from "styled-components"
-import { Text, Box } from "../components"
+import { Text, Box, Input } from "../components"
 
 
 export default function StyleGuide() {
@@ -36,29 +36,51 @@ export default function StyleGuide() {
 
       {/** Box */}
       <Text level={1} fontWeight={700}>Box</Text>
-      <Box.Container width="600px" variation={1}>
-        <Box.Row center>
+      <Box.Container width="600px" shadow="shadow01">
+        <Box.Row justify="center">
           <Text fontWeight={600}>This is a center text</Text>
         </Box.Row>
-        <Box.Row end>
+        <Box.Row justify="end">
           <Text>This is a Box</Text>
         </Box.Row>
         <Text color="lightGray">This is a Box</Text>
       </Box.Container>
-      
+
       <Text>Code:</Text>
       <pre>
         {`        
-        <Box.Container width="600px">
-          <Box.Row center>
-            <Text fontWeight={600}>This is a center text</Text>
-          </Box.Row>
-          <Box.Row end>
-            <Text>This is a Box</Text>
-          </Box.Row>
-          <Text color="lightGray">This is a Box</Text>
-        </Box.Container>
+        <Box.Container width="600px" shadow="shadow01">
+        <Box.Row justify="center">
+          <Text fontWeight={600}>This is a center text</Text>
+        </Box.Row>
+        <Box.Row justify="end">
+          <Text>This is a Box</Text>
+        </Box.Row>
+        <Text color="lightGray">This is a Box</Text>
+      </Box.Container>
         `}
+      </pre>
+      <hr />
+      {/** Input */}
+      <Text level={1} fontWeight={700}>Input</Text>
+      <Box.Container width="600px" shadow="shadow04">
+        <Input label="Email" placeholder="email" />
+        <Box.Row>
+          <Input label="Password" placeholder="password" type="password" />
+          <Input label="Confirm password" placeholder="password" type="password" />
+        </Box.Row>
+      </Box.Container>
+      <Text>Code:</Text>
+      <pre>
+        {`
+        <Box.Container width="600px" shadow="shadow04">
+          <Input label="Email" placeholder="email" />
+          <Box.Row>
+            <Input label="Password" placeholder="password" type="password" />
+            <Input label="Confirm password" placeholder="password" type="password" />
+          </Box.Row>
+        </Box.Container>
+    `}
       </pre>
     </Page>
   )
