@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { IShadows } from './../../../types';
 
-type BoxProps = {
+interface BoxProps extends IShadows {
   width?: string;
-  shadow?: 'shadow01' | 'shadow02' | 'shadow03' | 'shadow04' | 'shadow05'
 }
 
 type RowProps = {
@@ -20,12 +20,13 @@ export const Container = styled.div<BoxProps>`
   border-radius: 8px;  
   box-shadow: ${attr => {
 
-    if (attr.shadow === undefined) return ({ theme }) => theme.boxShadows.shadow01;
-    if (attr.shadow === 'shadow01') return ({ theme }) => theme.boxShadows.shadow01;
-    if (attr.shadow === 'shadow02') return ({ theme }) => theme.boxShadows.shadow02;
-    if (attr.shadow === 'shadow03') return ({ theme }) => theme.boxShadows.shadow03;
-    if (attr.shadow === 'shadow04') return ({ theme }) => theme.boxShadows.shadow04;
-    if (attr.shadow === 'shadow05') return ({ theme }) => theme.boxShadows.shadow05;
+    if (attr.shadow === undefined) return ({ theme }) => theme.boxShadows.basic01;
+    if (attr.shadow === 'basic01') return ({ theme }) => theme.boxShadows.basic01;
+    if (attr.shadow === 'basic02') return ({ theme }) => theme.boxShadows.basic02;
+    if (attr.shadow === 'basic03') return ({ theme }) => theme.boxShadows.basic03;
+    if (attr.shadow === 'bold') return ({ theme }) => theme.boxShadows.bold;
+    if (attr.shadow === 'skyblue') return ({ theme }) => theme.boxShadows.skyblue;
+    if (attr.shadow === 'strong') return ({ theme }) => theme.boxShadows.strong;
 
   }};
 

@@ -36,7 +36,7 @@ export default function StyleGuide() {
 
       {/** Box */}
       <Text level={1} fontWeight={700}>Box</Text>
-      <Box.Container width="600px" shadow="shadow01">
+      <Box.Container width="600px" shadow="basic01">
         <Box.Row justify="center">
           <Text fontWeight={600}>This is a center text</Text>
         </Box.Row>
@@ -63,7 +63,7 @@ export default function StyleGuide() {
       <hr />
       {/** Input */}
       <Text level={1} fontWeight={700}>Input</Text>
-      <Box.Container width="600px" shadow="shadow04">
+      <Box.Container width="600px" shadow="skyblue">
         <Input label="Email" placeholder="email" />
         <Box.Row>
           <Input label="Password" placeholder="password" type="password" />
@@ -73,11 +73,11 @@ export default function StyleGuide() {
       <Text>Code:</Text>
       <pre>
         {`
-        <Box.Container width="600px" shadow="shadow04">
-          <Input label="Email" placeholder="email" />
+        <Box.Container width="600px" shadow="skyblue">
+         <Input label="Email" placeholder="email" />
           <Box.Row>
-            <Input label="Password" placeholder="password" type="password" />
-            <Input label="Confirm password" placeholder="password" type="password" />
+           <Input label="Password" placeholder="password" type="password" />
+           <Input label="Confirm password" placeholder="password" type="password" />
           </Box.Row>
         </Box.Container>
     `}

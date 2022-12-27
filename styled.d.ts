@@ -1,15 +1,16 @@
 import "styled-components";
-import { boxShadows } from "./types";
+import { IboxShadows } from "./types";
 
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
-      body: string;
       black: string;
-      white: string;
+      body: string;
       gray: string;
       lightGray: string;
+      primary: string;
+      white: string;
     };
-    boxShadows: boxShadows
+    boxShadows?: IboxShadows;
   }
 }
