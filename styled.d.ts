@@ -1,4 +1,5 @@
 import "styled-components";
+import { boxShadows } from "./types";
 
 declare module "styled-components" {
   export interface DefaultTheme {
@@ -6,15 +7,9 @@ declare module "styled-components" {
       body: string;
       black: string;
       white: string;
-      gray: string,
-      lightGray: string,
+      gray: string;
+      lightGray: string;
     };
-    boxShadows:{
-      shadow01: string,
-      shadow02: string,
-      shadow03: string,
-      shadow04: string,
-      shadow05: string
-    }
+    boxShadows: boxShadows
   }
 }
