@@ -5,12 +5,22 @@ export interface IboxShadows {
   skyblue: string;
   basic03: string;
   strong: string;
+  top: string;
+}
+
+export interface ISizes {
+  xsmall: string,
+  small: string,
+  normal: string,
+  large: string,
+  xlarge: string,
+  xxlarge: string,
 }
 
 export interface IColors {
-  color: "black" | "body" | "gray" | "lightGray" | "primary" | "white";
+  color?: "black" | "body" | "gray" | "lightGray" | "primary" | "white";
 }
 
 export interface IShadows {
-  shadow?: "basic01" | "basic02" | "basic03" | "bold" | "skyblue" | "strong";
+  shadow?: "basic01" | "basic02" | "basic03" | "bold" | "skyblue" | "strong" | "top";
 }

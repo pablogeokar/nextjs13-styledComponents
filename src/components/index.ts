@@ -1,5 +1,6 @@
-import { Text } from "./Text/Text";
 import * as Box from "./Box/Box";
+import * as Tab from "./Tab/Tab";
 import { Input } from "./Input/Input";
+import { Text } from "./Text/Text";
 
-export { Text, Box, Input };
+export { Box, Input, Tab, Text };

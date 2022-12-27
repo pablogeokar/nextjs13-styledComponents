@@ -1,4 +1,13 @@
-import { IboxShadows } from "../../types";
+import { IboxShadows, ISizes } from "../../types";
+
+export const fontSizes: ISizes = {
+  xsmall: ".8rem",
+  small: ".9rem",
+  normal: "1.1rem",
+  large: "2rem",
+  xlarge: "3rem",
+  xxlarge: "4rem",
+};
 
 export const boxShadows: IboxShadows = {
   basic01:
@@ -10,4 +19,5 @@ export const boxShadows: IboxShadows = {
   skyblue: "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px",
   strong:
     "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
+  top: "0 -1px 4px -1px rgba(0,0,0,.4) ",
 };

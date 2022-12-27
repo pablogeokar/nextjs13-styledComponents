@@ -1,5 +1,5 @@
 import "styled-components";
-import { IboxShadows } from "./types";
+import { IboxShadows, ISizes } from "./types";
 
 declare module "styled-components" {
   export interface DefaultTheme {
@@ -12,5 +12,6 @@ declare module "styled-components" {
       white: string;
     };
     boxShadows?: IboxShadows;
+    fontSizes?: ISizes;
   }
 }

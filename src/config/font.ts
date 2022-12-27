@@ -7,6 +7,7 @@ export const font = Poppins({
 });
 
 // Font sizes
+/*
 export const sizes = {
   xsmall: ".8rem",
   small: ".9rem",
@@ -15,3 +16,4 @@ export const sizes = {
   xlarge: "3rem",
   xxlarge: "4rem",
 };
+*/

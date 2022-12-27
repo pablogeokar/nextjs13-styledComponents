@@ -2,13 +2,13 @@ import { DefaultTheme } from "styled-components";
 
 export const light: DefaultTheme = {
   colors: {
-    //body: "#E4E9F7",
-    body: "#fff",
+    body: "#E4E9F7",
+    //body: "#fff",
     black: "#1c1c1c",
     white: "#fff",
     gray: "#333",
     lightGray: "#ccc",
-    primary: 'rgba(3, 102, 214)'
+    primary: '#1e90ff'
   },
 };
 

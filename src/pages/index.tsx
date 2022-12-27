@@ -1,6 +1,6 @@
 
 import styled from "styled-components"
-import { Text, Box, Input } from "../components"
+import { Text, Box, Input, Tab } from "../components"
 
 
 export default function StyleGuide() {
@@ -11,7 +11,7 @@ export default function StyleGuide() {
       <Text>This is sample text!</Text>
       <Text level={1}>This is sample text!</Text>
       <Text level={2} fontWeight={600}>This is sample text!</Text>
-      <Text level={3} color="gray">This is sample text!</Text>
+      <Text level={3} color='gray'>This is sample text!</Text>
       <Text level={3} color="white">This is sample text!</Text>
       <Text level={5} lineHeight={4}>This is sample text!</Text>
       <Text level={6}>This is sample text!</Text>
@@ -82,6 +82,16 @@ export default function StyleGuide() {
         </Box.Container>
     `}
       </pre>
+      <Text level={1} fontWeight={700}>Tab</Text>
+      <Tab.Container>
+        <Tab.Tabs>
+          <Tab.Item className="active">View</Tab.Item>
+          <Tab.Item>Code</Tab.Item>
+        </Tab.Tabs>
+        <Tab.Content>
+        test
+        </Tab.Content>
+      </Tab.Container>
     </Page>
   )
 }

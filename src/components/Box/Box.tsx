@@ -27,6 +27,7 @@ export const Container = styled.div<BoxProps>`
     if (attr.shadow === 'bold') return ({ theme }) => theme.boxShadows.bold;
     if (attr.shadow === 'skyblue') return ({ theme }) => theme.boxShadows.skyblue;
     if (attr.shadow === 'strong') return ({ theme }) => theme.boxShadows.strong;
+    if (attr.shadow === 'top') return ({ theme }) => theme.boxShadows.top;
 
   }};
 
