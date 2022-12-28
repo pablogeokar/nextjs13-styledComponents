@@ -7,7 +7,7 @@ export const light: DefaultTheme = {
     black: "#1c1c1c",
     white: "#fff",
     gray: "#333",
-    lightGray: "#ccc",
+    lightGray: "#dfe6e9",
     primary: '#1e90ff'
   },
 };

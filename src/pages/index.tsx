@@ -43,7 +43,7 @@ export default function StyleGuide() {
         <Box.Row justify="end">
           <Text>This is a Box</Text>
         </Box.Row>
-        <Text color="lightGray">This is a Box</Text>
+        <Text color="primary">This is a Box</Text>
       </Box.Container>
 
       <Text level={4}>Code:</Text>
@@ -84,20 +84,12 @@ export default function StyleGuide() {
       </pre>
       <hr />
       <Text level={1} fontWeight={700}>Tab</Text>
-      <Tab.Container>
-        <Tab.Tabs>
-          <Tab.Item className="active">View</Tab.Item>
-          <Tab.Item>Code</Tab.Item>
-        </Tab.Tabs>
-        <Tab.Content>
-        test
-        </Tab.Content>
-      </Tab.Container>
+      <Tab />
       <hr />
     </Page>
   )
 }
 
 const Page = styled.div`
-  padding: 2rem;
+  padding: 1rem;
 `

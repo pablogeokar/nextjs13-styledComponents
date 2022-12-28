@@ -1,5 +1,5 @@
 import * as Box from "./Box/Box";
-import * as Tab from "./Tab/Tab";
+import Tab from "./Tab/Tab";
 import { Input } from "./Input/Input";
 import { Text } from "./Text/Text";
 
