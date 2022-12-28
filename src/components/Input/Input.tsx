@@ -19,18 +19,19 @@ export function Input({ label, placeholder, name, value, onChange, type = 'text'
 }
 
 const Label = styled.label`
-  font-size: 0.875rem;
+  font-size: 1.4rem;
   line-height: 1.25rem;
   color: rgba(31,41,55,0.9);  
 `
 
 const InputStyled = styled.input`
   width: 100%;
-  padding: .675rem .5rem;
-  margin-top: .5rem;
+  padding: 1.4rem;
+  margin-top: 1rem;
   border: 1px solid #bdc3c7a4;
   background-color: #fff;  
-  border-radius: .5rem;
+  border-radius: .8rem;
+  font-size: 1.6rem;
 
   :focus{
     border-color: rgb(96,165,250,1);

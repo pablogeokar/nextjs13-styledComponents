@@ -1,11 +1,11 @@
 import { IboxShadows, ISizes } from "../../types";
 
 export const fontSizes: ISizes = {
-  xsmall: ".8rem",
-  small: ".9rem",
-  normal: "1.1rem",
-  large: "2rem",
-  xlarge: "3rem",
+  xsmall: "1rem",
+  small: "1.2rem",
+  normal: "1.6rem",
+  large: "2.4rem",
+  xlarge: "3.2rem",
   xxlarge: "4rem",
 };
 

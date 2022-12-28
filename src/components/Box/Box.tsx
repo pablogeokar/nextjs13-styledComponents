@@ -13,10 +13,10 @@ export const Container = styled.div<BoxProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 2.2rem;
   background-color: ${({ theme }) => theme.colors.white};
   width: ${attr => attr.width};
-  padding: 1.5rem;
+  padding: 1.6rem;
   border-radius: 8px;  
   box-shadow: ${attr => {
 
@@ -35,10 +35,14 @@ export const Container = styled.div<BoxProps>`
 
 export const Row = styled.div<RowProps>`
 display: flex;
-justify-content: ${attr => {
-    if (attr.justify === 'center') return 'center'
-    if (attr.justify === 'end') return 'flex-end'
-  }
+  justify-content: ${attr => {
+     if (attr.justify === 'center') return 'center'
+     if (attr.justify === 'end') return 'flex-end'
+    }
   };
-gap: 1rem;
+  gap: 1.6rem;
+
+  @media only screen and (max-width: 360px) {
+    flex-direction: column;
+  }
 `
