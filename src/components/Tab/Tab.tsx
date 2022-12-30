@@ -1,82 +1,111 @@
-import React, { Children, ReactElement, ReactNode, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
+import { Text } from '..'
 import styled from 'styled-components'
 
-interface IItem {
+interface ITabItem {
   label: string;
-  id: string;
+  component: ReactElement;
 }
 
 interface ITab {
-  tab: IItem[]
-  children: ReactNode
+  title?: string;
+  tabs: ITabItem[]
 }
 
-export function Container({ tab, children }: ITab) {
-  const [activeTab, setActiveTab] = useState('')
+export function Tab({ title, tabs }: ITab) {
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
 
-  function handleActiveTab(tab: string) {
-    setActiveTab(tab)    
-    //children[0].props.style.display = 'block';
-    console.log(children)
+  const activeTab = (index: number) => {
+    setActiveTabIndex(index)
   }
 
   return (
-    <Tabs>
-      <div style={{ display: 'flex' }}>
+    <TabView>
+      {title && <Text level={3} fontWeight={700}>{title}</Text>}
+      <Body>
         {
-
-          tab.map((item, index) => (
-            <div key={item.id} onClick={() => handleActiveTab(item.id)}>
-              {index === 0 ?
-                <InputRadio type="radio" name="tabs" id={item.id} defaultChecked className='radio' /> :
-                <InputRadio type="radio" name="tabs" id={item.id} className='radio' />
-              }
-              <Label htmlFor={item.id} className='label'>{item.label}</Label>
+          tabs === undefined ?
+            <Text>No Content</Text>
+            :
+            <div>
+              <Tabs>
+                {
+                  tabs.map((tab, index) => (
+                    <Text
+                      key={index}
+                      className={index === activeTabIndex ? 'active-tab' : 'tab'}
+                      onClick={() => activeTab(index)}
+                    >
+                      {tab.label}
+                    </Text>
+                  ))
+                }
+              </Tabs>
+              <Content>
+                {tabs[activeTabIndex].component}
+              </Content>
             </div>
-          ))
-
         }
-      </div>
-
-      <Content>
-        {children}
-      </Content>
-
-    </Tabs>
+      </Body>
+    </TabView>
   )
 }
 
-const Tabs = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1rem;  
-  //width: 100%;
-  //max-width: 400px;
+const TabView = styled.div`
+  width: 100%;
+  max-width: 600px;
+`
+const Body = styled.div`
+  //padding: 1.6rem;
+  border-radius: .8rem;
+  overflow: hidden;
+`
+const Tabs = styled.div`  
+  display: flex;  
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
 
-  .radio:checked+.label{
-    font-weight: 600;
+  .tab{
+    padding: 1.6rem 1rem;
+    border: 1px solid ${({ theme }) => theme.colors.lightGray};
+    //opacity: .9;
+    background-color: #f2f2f2;
+  }
+  .active-tab{
+    padding: 1.6rem 1rem;
+    border-left: 1px solid ${({ theme }) => theme.colors.lightGray};
+    border-top: 1px solid ${({ theme }) => theme.colors.lightGray};
+    border-right: 1px solid ${({ theme }) => theme.colors.lightGray};
+    background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.primary};
-    border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
+    font-weight: 600;
+  }
+
+  .tab:first-of-type,
+  .active-tab:first-of-type{
+    border-right: none;
   }
 `
-
-const InputRadio = styled.input`&[type="radio"]{
-    display: none;
-  } 
-`
-
-const Label = styled.label`
-  padding: 1.2rem 1.6rem;
-  cursor: pointer;
-  font-size: ${({ theme }) => theme.fontSizes.normal};
-`
-
 const Content = styled.div`
-  //order: 1;
-  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.white};
   padding: 1.6rem;
-  border-bottom: 3px solid #ddd;
-  //line-height: 1.5;
-  //display: none;
+  border-left:1px solid ${({ theme }) => theme.colors.lightGray};
+  border-bottom:1px solid ${({ theme }) => theme.colors.lightGray};
+  border-right:1px solid ${({ theme }) => theme.colors.lightGray};
+  ::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: ${({ theme }) => theme.colors.lightGray};
+    top: -1px;
+    right: 0;
+    z-index: -1;
+  }
 `
