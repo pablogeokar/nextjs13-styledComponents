@@ -1,12 +1,13 @@
 
 import styled from "styled-components"
-import { Text, Box, Input, Tab } from "../components"
+import { Text, Box, Input, Tab, Icon } from "../components"
 
 
 export default function StyleGuide() {
   return (
     <Page>
       {/** Typography */}
+      <Icon icon="TextAa" />
       <Text level={1} fontWeight={700}>Typography</Text>
       <Text>This is sample text!</Text>
       <Text level={1}>This is sample text!</Text>
@@ -88,7 +89,8 @@ export default function StyleGuide() {
         title="Typography"
         tabs={[
           { label: 'Tab #1', component: (<Text>Content Tab #1</Text>) },
-          { label: 'Tab #2', component: (<Text>Content Tab #2</Text>) }
+          { label: 'Tab #2', component: (<Text>Content Tab #2</Text>) },
+          { label: 'Tab #3', component: (<Text>Content Tab #3</Text>) }
         ]} />
       <hr />
     </Page>
@@ -96,5 +98,7 @@ export default function StyleGuide() {
 }
 
 const Page = styled.div`
-  padding: 1rem;
+  padding: 2rem;
+  max-width: 800px;
+  margin:  0 auto;
 `

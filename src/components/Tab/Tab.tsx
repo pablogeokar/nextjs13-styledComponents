@@ -21,7 +21,7 @@ export function Tab({ title, tabs }: ITab) {
 
   return (
     <TabView>
-      {title && <Text level={3} fontWeight={700}>{title}</Text>}
+      {title && <Text level={1} fontWeight={700}>{title}</Text>}
       <Body>
         {
           tabs === undefined ?
@@ -52,8 +52,8 @@ export function Tab({ title, tabs }: ITab) {
 }
 
 const TabView = styled.div`
-  width: 100%;
-  max-width: 600px;
+  //width: 100%;
+  //max-width: 600px;
 `
 const Body = styled.div`
   //padding: 1.6rem;
@@ -69,22 +69,26 @@ const Tabs = styled.div`
   .tab{
     padding: 1.6rem 1rem;
     border: 1px solid ${({ theme }) => theme.colors.lightGray};
+    border-left: 0;
     //opacity: .9;
     background-color: #f2f2f2;
+    font-weight: 300;
+    border-radius: 1rem 1rem 0 0;
   }
   .active-tab{
     padding: 1.6rem 1rem;
-    border-left: 1px solid ${({ theme }) => theme.colors.lightGray};
+    //border-left: 1px solid ${({ theme }) => theme.colors.lightGray};
     border-top: 1px solid ${({ theme }) => theme.colors.lightGray};
     border-right: 1px solid ${({ theme }) => theme.colors.lightGray};
     background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.primary};
-    font-weight: 600;
+    //color: ${({ theme }) => theme.colors.primary};
+    font-weight: 500;
+    border-radius: 1rem 1rem 0 0;
   }
 
   .tab:first-of-type,
   .active-tab:first-of-type{
-    border-right: none;
+    border-left: 1px solid ${({ theme }) => theme.colors.lightGray};
   }
 `
 const Content = styled.div`
