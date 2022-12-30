@@ -84,7 +84,14 @@ export default function StyleGuide() {
       </pre>
       <hr />
       <Text level={1} fontWeight={700}>Tab</Text>
-      <Tab />
+      <Tab.Container
+        tab={[
+          { id: 'tab1', label: 'Tab #1' },
+          { id: 'tab2', label: 'Tab #2' }
+        ]} >
+        <div id="tab1" style={{display: 'none'}}>Content Tab #1</div>
+        <div id="tab2" style={{display: 'none'}}>Content Tab #2</div>        
+      </Tab.Container>
       <hr />
     </Page>
   )

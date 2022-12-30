@@ -1,112 +1,82 @@
+import React, { Children, ReactElement, ReactNode, useState } from 'react';
 import styled from 'styled-components'
 
-export default function Tab() {
+interface IItem {
+  label: string;
+  id: string;
+}
+
+interface ITab {
+  tab: IItem[]
+  children: ReactNode
+}
+
+export function Container({ tab, children }: ITab) {
+  const [activeTab, setActiveTab] = useState('')
+
+  function handleActiveTab(tab: string) {
+    setActiveTab(tab)    
+    //children[0].props.style.display = 'block';
+    console.log(children)
+  }
+
   return (
-    <Container>
-      <Tabs>
-        <Item className='active'>Component</Item>
-        <Item >Design</Item>
-        <Item>Code</Item>
-      </Tabs>
+    <Tabs>
+      <div style={{ display: 'flex' }}>
+        {
+
+          tab.map((item, index) => (
+            <div key={item.id} onClick={() => handleActiveTab(item.id)}>
+              {index === 0 ?
+                <InputRadio type="radio" name="tabs" id={item.id} defaultChecked className='radio' /> :
+                <InputRadio type="radio" name="tabs" id={item.id} className='radio' />
+              }
+              <Label htmlFor={item.id} className='label'>{item.label}</Label>
+            </div>
+          ))
+
+        }
+      </div>
+
       <Content>
-        a
+        {children}
       </Content>
-    </Container>
+
+    </Tabs>
   )
 }
 
-
-const Container = styled.div`
-  //position: relative;
+const Tabs = styled.div`
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
-  min-height: 40rem;  
-  //font-size: 1.6rem;
-  //padding: 1rem;  
-`
+  flex-wrap: wrap;
+  gap: 1rem;  
+  //width: 100%;
+  //max-width: 400px;
 
-const Tabs = styled.div`
-  display: flex;  
-  position: absolute ;  
-  //overflow: hidden;
-  //overflow-x: visible;  
-  //gap: 1px;  
-  //padding: 1rem;
-  //background-color: lightblue;
-  @media only screen and (max-width: 360px) {
-    margin-left : 0;   
+  .radio:checked+.label{
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.primary};
+    border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
   }
 `
 
-const Item = styled.span`
-  display: flex;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.lightGray};
-  //opacity: .8;  
-  //background-color: #ecf0f1;
-  font-size: 1.4rem;
-  padding: .5rem 1.6rem;  
-  border-radius: 1.6rem 1.2rem 0 0;
-  border-right: 1px solid;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  min-width: 15rem;
-  cursor: pointer ;
-  //box-shadow: ${({ theme }) => theme.boxShadows.top};
-  
+const InputRadio = styled.input`&[type="radio"]{
+    display: none;
+  } 
+`
 
-  :first-of-type{       
-    border-right: 0;
-    border-radius: 1.6rem 1.2rem 0 0rem;
-  }
-
-  :last-of-type{
-    border-left: 0;
-  }
-
-  &.active{
-    position: relative;
-    top: 1px;    
-    background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.gray};
-    //z-index: 100;
-    
-  }
-
-  :hover{
-    filter: brightness(.9);
-    &.active{
-      filter: none;
-    }
-  }
-
-  @media only screen and (max-width: 360px) {
-    border-radius: 1.6rem 1.2rem 0 0rem; 
-  }
-
-  
+const Label = styled.label`
+  padding: 1.2rem 1.6rem;
+  cursor: pointer;
+  font-size: ${({ theme }) => theme.fontSizes.normal};
 `
 
 const Content = styled.div`
-  display: flex;
-  position: relative ;
-  top: 3.2rem;
-  left: 0;
-  z-index: -1;
-  flex: 1;
-  flex-direction: column;  
+  //order: 1;
+  width: 100%;
   padding: 1.6rem;
-  border: 1px solid;
-  background-color: ${({ theme }) => theme.colors.white};
-  //border-radius: 1rem;
-  border-radius: 0 0 1rem 1rem;
-  //border: 1px ${({ theme }) => theme.colors.lightGray};
-  //box-shadow: ${({ theme }) => theme.boxShadows.basic01};
-  //min-height: 100px;
-  //min-width: 100%;
-
-  @media only screen and (max-width: 360px) {
-    border-radius: 0 0 1rem 1rem;
-  }
+  border-bottom: 3px solid #ddd;
+  //line-height: 1.5;
+  //display: none;
 `
