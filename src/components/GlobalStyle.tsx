@@ -2,6 +2,9 @@ import { createGlobalStyle } from 'styled-components'
 import { font } from '../config/font'
 
 const GlobalStyle = createGlobalStyle`
+  :root{
+   --primary: red; 
+  }
   html{
     font-size: 62.5%;
   }

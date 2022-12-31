@@ -1,11 +1,13 @@
 
 import styled from "styled-components"
 import { Text, Box, Input, Tab, Icon } from "../components"
-
+import { Button } from '@zionix/ui'
 
 export default function StyleGuide() {
   return (
+
     <Page>
+      <Button label="Teste"/>
       {/** Typography */}
       <Text level={1} fontWeight={700}>Typography</Text>
       <Text>This is sample text!</Text>
