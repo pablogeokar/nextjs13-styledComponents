@@ -7,7 +7,6 @@ export default function StyleGuide() {
   return (
     <Page>
       {/** Typography */}
-      <Icon icon="TextAa" />
       <Text level={1} fontWeight={700}>Typography</Text>
       <Text>This is sample text!</Text>
       <Text level={1}>This is sample text!</Text>
@@ -84,13 +83,11 @@ export default function StyleGuide() {
     `}
       </pre>
       <hr />
-      <Text level={1} fontWeight={700}>Tab</Text>
       <Tab
         title="Typography"
         tabs={[
-          { label: 'Tab #1', component: (<Text>Content Tab #1</Text>) },
-          { label: 'Tab #2', component: (<Text>Content Tab #2</Text>) },
-          { label: 'Tab #3', component: (<Text>Content Tab #3</Text>) }
+          { icon: 'Monitor', label: 'Design', component: (<Text>Content Tab #1</Text>) },
+          { icon: 'Code', label: 'Code', component: (<Text>Content Tab #2</Text>) }
         ]} />
       <hr />
     </Page>

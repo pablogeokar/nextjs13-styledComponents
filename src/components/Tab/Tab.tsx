@@ -1,8 +1,9 @@
 import React, { ReactElement, useState } from 'react';
-import { Text } from '..'
+import { Icon, Text } from '..'
 import styled from 'styled-components'
+import { IconsType } from './../Icon/Icon.d';
 
-interface ITabItem {
+interface ITabItem extends IconsType {
   label: string;
   component: ReactElement;
 }
@@ -31,13 +32,15 @@ export function Tab({ title, tabs }: ITab) {
               <Tabs>
                 {
                   tabs.map((tab, index) => (
-                    <Text
-                      key={index}
-                      className={index === activeTabIndex ? 'active-tab' : 'tab'}
-                      onClick={() => activeTab(index)}
-                    >
-                      {tab.label}
-                    </Text>
+                    <div key={index}>
+                      <Text
+                        onClick={() => activeTab(index)}
+                        className={index === activeTabIndex ? 'active-tab' : 'tab'}
+                      >
+                        {tab.icon && <Icon icon={tab.icon} size={20} weight='regular' bgColor='#e8e8e8' />}
+                        {tab.label}
+                      </Text>
+                    </div>
                   ))
                 }
               </Tabs>
@@ -62,33 +65,34 @@ const Body = styled.div`
 `
 const Tabs = styled.div`  
   display: flex;  
-  align-items: center;
-  cursor: pointer;
+  align-items: end;
+  cursor: pointer;  
   z-index: 1;
-
-  .tab{
-    padding: 1.6rem 1rem;
+  
+  .tab{        
+    padding: 1rem 1rem;
     border: 1px solid ${({ theme }) => theme.colors.lightGray};
-    border-left: 0;
-    //opacity: .9;
-    background-color: #f2f2f2;
+    border-left: 0;    
+    background-color: #e8e8e8;
     font-weight: 300;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 1rem 3rem 0 0;    
   }
-  .active-tab{
-    padding: 1.6rem 1rem;
-    //border-left: 1px solid ${({ theme }) => theme.colors.lightGray};
+  .active-tab{         
+    padding: 1rem 1rem;    
     border-top: 1px solid ${({ theme }) => theme.colors.lightGray};
     border-right: 1px solid ${({ theme }) => theme.colors.lightGray};
-    background-color: ${({ theme }) => theme.colors.white};
-    //color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.white};    
     font-weight: 500;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 1rem 3rem 0 0;
   }
 
   .tab:first-of-type,
   .active-tab:first-of-type{
     border-left: 1px solid ${({ theme }) => theme.colors.lightGray};
+  }
+
+  .tab:hover, .active-tab:hover{
+    font-weight: 500;
   }
 `
 const Content = styled.div`

@@ -12,7 +12,10 @@ export interface TextProps extends IColors {
 export const Text = styled("span").attrs<TextProps>(({ level }) => ({
   as: `${level ? "h" + level : "span"}`,
 }))<TextProps>`
-  ${({ color = "gray", size, fontWeight = 400, lineHeight = 1.2 }) => css`    
+  ${({ color = "gray", size, fontWeight = 400, lineHeight = 1.2 }) => css`  
+    display: flex;  
+    align-items: center;
+    gap: .8rem;  
     font-size: ${size && fontSizes[size]};
     color: ${({ theme }) => theme.colors[color]};
     font-weight: ${fontWeight};
